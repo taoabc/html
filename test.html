@@ -2,7 +2,7 @@
   <div id="btn">
 <!--        <button onclick="submitFn()">打开app</button> -->
       <a href="weixin://" class="a-btn"  style="display: none">安卓</a>
-      <a href="weixin1://" class="i-btn" style="display: none">苹果</a>
+      <a href="weixin://" class="i-btn" style="display: none">苹果</a>
   </div>
 </body>
 <script src="http://m-cdn.saclub.com.cn/app/2.4/js/jquery-1.11.3.min.js"></script>
@@ -27,6 +27,7 @@
        openApp("安卓下载链接");
   });
   $(".i-btn").click(function(){
+    alert('click')
 //苹果
        openApp("https://apps.apple.com/us/app/microsoft-edge-web-browser/id1288723196");
   });
