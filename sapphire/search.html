@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Query {
+        constructor() {
+          const url = new URL(location.href);
+          this.sp = url.searchParams;
+        }
+
+        get(key) {
+          return this.sp.get(key);
+        }
+      }
+
+      function callBing() {
+        const intent =
+          "intent://x/#Intent;scheme=sapphire;package=com.microsoft.amp.apps.bingnews;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end";
+      }
+
+      function main() {}
+
+      main();
+    </script>
+  </body>
+</html>
