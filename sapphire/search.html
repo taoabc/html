@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <body>
+    <button onclick="callBing()">jump</button>
     <script>
       class Query {
         constructor() {
@@ -22,6 +23,7 @@
       function callBing() {
         const intent =
           "intent://x/#Intent;scheme=sapphire;package=com.microsoft.amp.apps.bingnews;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end";
+        location = intent;
       }
 
       function main() {}
