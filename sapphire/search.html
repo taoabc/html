@@ -5,30 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      a {
+        display: block;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
-    <button onclick="callBing()">jump</button>
-    <script>
-      class Query {
-        constructor() {
-          const url = new URL(location.href);
-          this.sp = url.searchParams;
-        }
+    <a href="https://www.google.com">_self https://www.google.com</a>
+    <a href="https://www.google.com" target="_blank">
+      _blank https://www.google.com
+    </a>
 
-        get(key) {
-          return this.sp.get(key);
-        }
-      }
+    <a href="https://accounts.google.com">_self https://accounts.google.com</a>
+    <a href="https://accounts.google.com" target="_blank">
+      _blank https://accounts.google.com
+    </a>
 
-      function callBing() {
-        const intent =
-          "intent://x/#Intent;scheme=sapphire;package=com.microsoft.amp.apps.bingnews;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end";
-        location = intent;
-      }
-
-      function main() {}
-
-      main();
-    </script>
+    <a href="https://taoabc.github.io/html/sapphire/search.html">
+      _self https://taoabc.github.io/html/sapphire/search.html
+    </a>
+    <a
+      href="https://taoabc.github.io/html/sapphire/search.html"
+      target="_blank"
+    >
+      _blank https://taoabc.github.io/html/sapphire/search.html
+    </a>
   </body>
 </html>
