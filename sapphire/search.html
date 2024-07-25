@@ -13,6 +13,7 @@
     </style>
   </head>
   <body>
+    <h2 id="tips" hidden>Redirecting to ...</h2>
     <a href="https://www.google.com">_self https://www.google.com</a>
     <a href="https://www.google.com" target="_blank">
       _blank https://www.google.com
@@ -39,5 +40,53 @@
     >
       _blank https://taoabc.github.io/html/sapphire/search.html
     </a>
+
+    <a
+      href="https://taoabc.github.io/html/sapphire/search.html?redirectUrl=https://www.google.com"
+    >
+      _self
+      https://taoabc.github.io/html/sapphire/search.html?redirectUrl=https://www.google.com
+    </a>
+
+    <a
+      href="https://taoabc.github.io/html/sapphire/search.html?redirectUrl=https://taoabc.github.io/html/sapphire/search.html"
+    >
+      _self
+      https://taoabc.github.io/html/sapphire/search.html?redirectUrl=https://taoabc.github.io/html/sapphire/search.html
+    </a>
+    <script>
+      // Function to get query parameters from the URL
+      function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.substring(1);
+        const queries = queryString.split("&");
+
+        queries.forEach((query) => {
+          const [key, value] = query.split("=");
+          params[key] = decodeURIComponent(value || "");
+        });
+
+        return params;
+      }
+
+      // Get the query parameters
+      const queryParams = getQueryParams();
+
+      function setTips() {
+        const ele = document.getElementById("tips");
+        ele.hidden = false;
+        document.getElementById(
+          "tips"
+        ).innerText = `Redirecting to ${queryParams.redirectUrl} ...`;
+      }
+
+      // Check if redirectUrl is present and redirect to it
+      if (queryParams.redirectUrl) {
+        setTips();
+        setTimeout(() => {
+          window.location.href = queryParams.redirectUrl;
+        }, 3000);
+      }
+    </script>
   </body>
 </html>
