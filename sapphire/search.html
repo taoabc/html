@@ -54,6 +54,17 @@
       _self
       https://taoabc.github.io/html/sapphire/search.html?redirectUrl=https://taoabc.github.io/html/sapphire/search.html
     </a>
+    <div id="user-agent-display"></div>
+
+    <script>
+      // 获取 User-Agent 字符串
+      const userAgent = navigator.userAgent;
+
+      // 获取 div 元素并将 User-Agent 显示进去
+      document.getElementById("user-agent-display").textContent =
+        "User-Agent: " + userAgent;
+    </script>
+
     <script>
       // Function to get query parameters from the URL
       function getQueryParams() {
